@@ -43,8 +43,9 @@ const options = {
             const currentTime = Date.now();
             const deltaTime = Date.parse(myInput.value) - currentTime;
             if(deltaTime < 5){
-                Notiflix.Report.info('Too late', 'Time is UP', 'Try next time');
+                Notiflix.Report.info('Too late', 'Time is OUT', 'Try next time');
                 clearInterval(intervalId);
+                myInput.disabled = false;
     
                 return;
             }
